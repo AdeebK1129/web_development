@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+}
+/* Offset for sections */
+.section-offset:before {
+    content: "";
+    display: block;
+    height: 122px; 
+    margin-top: -122px; 
+    visibility: hidden;
+}
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+.navbar .btn-outline-reservation {
+    border: 2px solid #E2725B; 
+    color: #E2725B; 
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+.navbar .btn-outline-reservation:hover {
+    background-color: #E2725B; 
+    color: #fff; 
+    border-color: #E2725B; 
+}
+.navbar .navbar-logo {
+    width: 80px; 
+    height: auto;
+    transition: ease-in-out 300ms;
+    transform: scale(1.7);
+}
+.navbar .navbar-logo:hover {
+    opacity: 0.7;
+    transform: scale(2.0);
+}
+/* Hero Section */
+.hero {
+    background-image: url('images/eating.jpeg'); 
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    position: relative; 
+}
+.hero .mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute; 
+    top: 0;
+    left: 0;
+    margin: 0; 
+    padding: 0; 
+}
+.hero .text-white {
+    text-align: center;
+}
+/* About Us */
+.about-signature-container {
+    background-color: #333333; 
+    margin-bottom: 0;
+}
+.content-section {
+    display: flex;
+    width: 100%;
+    height: auto; 
+    background-color: #333333; 
+    margin-bottom: 0;
+}
+.text-section {
+    background-color: #2c2c2c;
+    color: whitesmoke;
+    padding: 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.image-section {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-section img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    border-radius: 0;
+}
+/* Additional Info Section */
+.additional-info-section {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background-color: #333333;
+}
+.additional-image-section {
+    width: 50%;
+}
+.additional-image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+.additional-text-section {
+    width: 50%;
+    padding: 20px;
+    background-color: #2c2c2c;
+    color: whitesmoke;
+}
+/* Signature Dishes */
+.signature-dishes-background {
+    background-color: #333333; 
+    margin-top: 0;
+    padding-top: 0;
+}
+.signature-dishes-section {
+    text-align: center;
+    color: #fff;
+    margin-top: 0;
+    padding-top: 0;
+}
+.signature-dishes-section .card {
+    margin-bottom: 20px;
+}
+.signature-dishes-section .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+/* Menu Section */
+.menu-section {
+    text-align: center;
+}
+.menu-section .table {
+    margin-bottom: 20px;
+}
+.menu-section .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Reservation Banner */
+.reservation-banner {
+    background-image: url('images/table.jpeg'); 
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.reservation-banner .mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+.reservation-banner .btn {
+    margin-top: 0;
+}
+/* Footer */
+.footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+}
+.footer .text-uppercase {
+    font-weight: bold;
+}
+.footer a {
+    color: #000;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.footer .footer-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}

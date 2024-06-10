@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restaurant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Collapsible Navigation Tabs -->
+    <nav class="navbar bg-dark navbar-dark navbar-expand-lg p-3">
+        <!-- Create a link for a logo -->
+        <a href="" class="navbar-brand img-fluid">
+            <img src="images/peachpavilionlogo-removebg-preview.png" alt="restaurant logo" width="80px" height="auto" class="navbar-logo mx-4">
+        </a>
+        <h2 class="text-light">Peach Garden Pavilion</h2>
+
+        <!-- Create the home button -->
+        <button class="navbar-toggler ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsemenu">
+            <span>Menu</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Create the Dropdown Menu -->
+        <div class="collapse navbar-collapse" id="collapsemenu">
+            <!-- Add ms-auto class here -->
+            <nav class="navbar-nav ms-auto">
+                <a href="#hero" class="nav-item nav-link ms-3">Home</a>
+                <a href="#about" class="nav-item nav-link ms-3">About Us</a>
+                <a href="#signature-dishes" class="nav-item nav-link ms-3">Signature Dishes</a>
+                <a href="#menu" class="nav-item nav-link ms-3">Menu</a>
+            </nav>
+            <form class="d-flex ms-3">
+                <button class="btn btn-outline-reservation" type="button" onclick="window.location.href='reservation.html'">Reservation</button>
+            </form>
+        </div>
+    </nav>
+   
+
+    <!-- Hero -->
+    <div id="hero" class="p-5 text-center bg-image hero">
+        <div class="mask">
+            <div class="text-white">
+                <h1 class="mb-3">Welcome to Peach Garden Pavilion</h1>
+                <h4 class="mb-3">Where Tradition Meets Taste</h4>
+                <a class="btn btn-outline-light btn-lg" href="#menu" role="button">Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us and Signature Dishes Container -->
+    <div class="about-signature-container" id="about">
+        <!-- About Us Section -->
+        <div class="content-section d-flex section-offset">
+            <div class="text-section">
+                <h1 class="mb-3">About Us</h1>
+                <h2>Peach Garden Pavilion</h2>
+                <hr class="my-2">
+                <p>At Peach Garden Pavilion, we pride ourselves on bringing the rich flavors and time-honored traditions of Chinese cuisine to your table. Our passionate chefs use the freshest ingredients to craft dishes that are not only delicious but also celebrate the vibrant culture and heritage of China. Join us for an unforgettable culinary journey and experience the warmth of our hospitality.</p>
+                <a class="btn btn-outline-light btn-lg" data-bs-toggle="collapse" href="#additionalInfo" role="button">Read More</a>
+            </div>
+            <div class="image-section">
+                <img src="images/dimsum.jpg" alt="chef" class="img-fluid">
+            </div>
+        </div>
+
+        <!-- Additional Info Section -->
+        <div class="collapse" id="additionalInfo">
+            <div class="additional-info-section d-flex">
+                <div class="additional-image-section">
+                    <img src="images/interior.jpeg" alt="Restaurant Interior" class="img-fluid">
+                </div>
+                <div class="additional-text-section bg-light text-dark">
+                    <h2>Our History</h2>
+                    <p>Peach Garden Pavilion was founded in 1985 by two passionate culinary experts, Mei Ling and Wei Zhang, who envisioned a place where people could experience authentic Chinese cuisine in a warm and inviting atmosphere. With roots tracing back to ancient culinary traditions, they brought their family's secret recipes and a commitment to quality and excellence. Over the years, the restaurant has become a beloved establishment in the community, known for its exquisite dishes, exceptional service, and dedication to preserving the rich heritage of Chinese gastronomy.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signature Dishes Section -->
+        <div class="signature-dishes-background section-offset" id="signature-dishes">
+            <div class="signature-dishes-section container my-5">
+                <h2 class="text-center mb-4">Our Signature Dishes</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="images/beggarschicken.jpeg" class="card-img-top" alt="Beggar's Chicken">
+                            <div class="card-body">
+                                <h5 class="card-title">Beggar's Chicken (叫花鸡)</h5>
+                                <p class="card-text">A traditional Chinese dish where a whole chicken is marinated, wrapped in lotus leaves, and baked in clay, resulting in incredibly tender and flavorful meat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="images/buddhajumps.webp" class="card-img-top" alt="Buddha Jumps Over the Wall">
+                            <div class="card-body">
+                                <h5 class="card-title">Buddha Jumps Over the Wall (佛跳墙)</h5>
+                                <p class="card-text">A luxurious Fujian soup made with an array of high-quality ingredients like abalone, sea cucumber, and shark fin, simmered to create a deeply rich and aromatic broth.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="images/dongpo.jpeg" class="card-img-top" alt="Dongpo Pork">
+                            <div class="card-body">
+                                <h5 class="card-title">Dongpo Pork (东坡肉)</h5>
+                                <p class="card-text">A famous Hangzhou dish named after the poet Su Dongpo, featuring braised pork belly cooked to a melt-in-the-mouth texture with a rich, savory flavor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="menu-section container my-5 section-offset" id="menu">
+        <h2 class="text-center mb-4">Our Menu</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Main Course</h3>
+                <table class="table table-dark table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Mapo Tofu (麻婆豆腐)</td>
+                            <td class="text-end">$8.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sichuan Hotpot (四川火锅)</td>
+                            <td class="text-end">$15.00</td>
+                        </tr>
+                        <tr>
+                            <td>Xiaolongbao (小笼包)</td>
+                            <td class="text-end">$9.50</td>
+                        </tr>
+                        <tr>
+                            <td>Beef Chow Fun (干炒牛河)</td>
+                            <td class="text-end">$10.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h3>Special Menu</h3>
+                <table class="table table-dark table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Red Braised Pork Belly (红烧肉)</td>
+                            <td class="text-end">$12.00</td>
+                        </tr>
+                        <tr>
+                            <td>Lion's Head Meatballs (狮子头)</td>
+                            <td class="text-end">$11.50</td>
+                        </tr>
+                        <tr>
+                            <td>Fish-Flavored Eggplant (鱼香茄子)</td>
+                            <td class="text-end">$8.50</td>
+                        </tr>
+                        <tr>
+                            <td>Tea-Smoked Duck (熏鸭)</td>
+                            <td class="text-end">$13.00</td>
+                        </tr>
+                        <tr>
+                            <td>Hot and Sour Soup (酸辣汤)</td>
+                            <td class="text-end">$5.50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Drinks</h3>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Jasmine Tea (茉莉花茶)
+                        <span class="badge bg-primary rounded-pill">$3.00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Pu-erh Tea (普洱茶)
+                        <span class="badge bg-primary rounded-pill">$4.00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Oolong Tea (乌龙茶)
+                        <span class="badge bg-primary rounded-pill">$5.00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Chrysanthemum Tea (菊花茶)
+                        <span class="badge bg-primary rounded-pill">$3.50</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reservation Banner Section -->
+    <div class="reservation-banner text-center bg-image">
+        <div class="mask">
+            <a class="btn btn-outline-light btn-lg" href="reservation.html" role="button">Reservation</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Us -->
+                <div class="col-md-4">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><img src="images/phone.svg" alt="Phone Icon" class="footer-icon"> To contact us, call (555) 123-4567</li>
+                        <li><img src="images/location.svg" alt="Location Icon" class="footer-icon"> Peach Garden Pavilion<br>1234 Culinary St.<br>Food City, FC 56789</li>
+                    </ul>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h5 class="text-uppercase">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#signature-dishes">Signature Dishes</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="reservation.html">Reservation</a></li>
+                    </ul>
+                </div>
+                <!-- Follow Us -->
+                <div class="col-md-4">
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.facebook.com/haidilaohotpotus/"><img src="images/facebook.svg" alt="Facebook Icon" class="footer-icon"> Facebook</a></li>
+                        <li><a href="https://www.instagram.com/haidilao_us/?hl=en"><img src="images/instagram.svg" alt="Instagram Icon" class="footer-icon"> Instagram</a></li>
+                        <li><a href="https://www.youtube.com/hashtag/haidilao"><img src="images/youtube.svg" alt="YouTube Icon" class="footer-icon"> YouTube</a></li>
+                        <li><a href="https://www.linkedin.com/company/haidilao-official/"><img src="images/linkedin.svg" alt="LinkedIn Icon" class="footer-icon"> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12088.12740160634!2d-73.8280583!3d40.7613242!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c261715d80d7b5%3A0xd572fad08e4515a3!2sHaidilao%20Huoguo%20Flushing!5e0!3m2!1sen!2sus!4v1717868646225!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
