@@ -82,35 +82,53 @@ console.log(`Your new balance is ${balance}`);
 
 console.log("===== Exercise: Simulate a Bank Transaction =====");
 // simulate the collection of a pin number of 4 digits
-// ask the user to pick a transcation by entering the corresponding number: View the Balance (1), Withdraw (2) (if, else, else, switch)
-// ask the user if they want another transcation
+// ask the user to pick a transaction by entering the corresponding number: View the Balance (1), Withdraw (2) (if, else, else, switch)
+// ask the user if they want another transaction
 // print result
 
-// Pin Collection
-const pin = "1234";
-let userPin = prompt("Enter your pin: ");
-let numberattempts = 0;
-while(userPin !== pin){
-    numberattempts++;
-    if(numberattempts > 2){
-        console.log("Your account is locked");
-        break
+do {
+    // Pin Collection
+    const pin = "1234";
+    let userPin = prompt("Enter your pin: ");
+    let numberAttempts = 0;
+    while(userPin !== pin){
+        numberAttempts++;
+        if(numberAttempts > 2){
+            console.log("Your account is locked");
+            break;
+        }
+        userPin = prompt(`You have ${3 - numberAttempts} attempts left. Enter your 4-digit pin again`);
     }
-    userPin = prompt(`You have ${3 - numberattempts} attempts left. Enter your 4-digit pin again again`);
-}
-let bankActionPrompt = parseInt(prompt("Pick your transaction by entering the corresponding number: View Your Balance (1), Withdraw (2)"));
-bankAction = "";
-switch(bankAction){
-    case 1:
-        bankAction = "View Your Balance";
-        break;
-    case 2: 
-        bankAction = "Withdraw";
-        break;
-    default:
-        console.log("Invalid Action Selected, please try again")
-}
 
+    if(numberAttempts <= 2) {
+        let transaction = parseInt(prompt("Pick your transaction by entering the corresponding number: View Your Balance (1), Withdraw (2)"));
+        switch(transaction) {
+            case 1:
+                // View Balance
+                console.log(`Your current balance is ${balance}`);
+                break;
+            case 2:
+                // Withdraw
+                let amount = parseInt(prompt("How much do you want to withdraw?"));
+                if(amount <= balance){
+                    balance -= amount;
+                    console.log(`Withdrawal successful. Your new balance is ${balance}`);
+                } else {
+                    console.log("Insufficient funds, transaction cancelled");
+                }
+                break;
+            default:
+                console.log("Invalid transaction, please try again");
+        }
+    }
+
+    let anotherTransaction = prompt("Do you want another transaction? (yes/no)").toLowerCase();
+    if(anotherTransaction !== 'yes') {
+        break;
+    }
+} while(true);
+
+console.log("Thank you for banking with us!");
 
 
 
