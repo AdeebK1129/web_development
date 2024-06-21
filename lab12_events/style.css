@@ -13,4 +13,108 @@
     margin: 50px;
     border: solid 2px black;
     padding: 30px;
+} 
+/* ----- 
+Tuesday, June 18
+Event Object in Key Event 
+
+----- */
+.btnpressme{
+    padding: 20px 50px;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 12px;
+}
+.btnpressme:hover{
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+}
+.btnactive{
+    color: red;
+    background-color: whitesmoke;
+    font-size: 15px;
+}
+/* Remove an item from a list */
+#listfruits li{
+    padding: 12px 30x;
+    width: 200px;
+    border: lightblue 1px solid;
+    list-style: none;
+}
+#listfruits li:hover{
+    background-color: crimson;
+    cursor: pointer;
+}
+
+#content{
+    background-color: aqua;
+    width: 1000px;
+    padding: 20px;
+}
+/* Slice Photo Gallery */
+.maincontainer, .gallerycontainer{
+    width: 1000px;
+}
+.maincontainer{
+    position: relative;
+    z-index: 0;
+    margin: 30px auto;
+}
+.gallerycontainer{
+    position: absolute;
+    z-index: 1;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.galleryimage{
+    display: inline-block;
+    width: 500px;
+}
+.btnleft, .btnright {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+    color: magenta;
+    font-size: 50px;
+    opacity: 0.6;
+}
+.btnleft:hover, .btnright:hover{
+    opacity: 1;
+}
+.btnright{
+    right: 20px;
+    top: 150px;
+}
+.btnleft{
+    top: 150px;
+    left: 20px;
+}
+
+/* Go Top */
+html{
+    scroll-behavior: smooth;
+}
+.gotop{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    background-color: rgba(250, 250, 250, 0.8);
+    transition: ease-in-out 200ms;
+    display: none;
+}
+.gotop img{
+    z-index: 1000;
+}
+.gotop a{
+    text-decoration: none;
+    color: black;
+}
+.gotop:hover{
+    background-color: rgba(200, 200, 200, 0.8);
+    box-shadow: 0px 0px 5px 2px;
 }
