@@ -53,7 +53,7 @@ resetButton.addEventListener("click", () => {
 // collect the button
 let btnpressme = document.querySelector(".btnpressme");
 btnpressme.addEventListener("click", (e) =>{
-    // switch text content 'btnpressme' button from Press Me to 'Button was Press'
+    // switch text content 'btnpressme' button from Press Me to 'Button was Pressed'
     if(e.target.textContent === "Press Me!"){
         e.target.textContent = "Button was Pressed";
     }
@@ -117,6 +117,111 @@ window.addEventListener("scroll", () => {
         gotop.style.display = "none";
     }
 })
+
+/**
+ * Thursday, June 20
+ * Form Events
+ * Input Event
+*/
+
+//get reference to form elements
+const myform = document.querySelector("#myform");
+// get the <div class="greeting">
+const greeting = document.querySelector(".greeting");
+const greetingname = document.querySelector(".greeting p span");
+
+myform.addEventListener("submit", (event) => {
+    // prevent the default form submission behaviour
+    event.preventDefault();
+
+    // username validation
+    const usernameinput = document.querySelector("#username");
+    // collect the input text value
+    const username = usernameinput.value;
+
+    // validation 1: make sure the user types a username before pressing the submit button
+    if(username.trim() === ""){
+        alert("Please enter a username");
+        return; // stop further execution
+    }
+
+    // if the validation passed, you can submi the data to the server
+    // greeting message after the validation
+    greetingname.innerHTML = username;
+    greeting.style.display = "block";
+    
+    // after the form is submitted, we can clear the username from the input field
+    usernameinput.value = "";
+})
+
+/**
+ * password validation
+ */
+
+// collect form elements
+const passwordfield = document.querySelector("#passwordfield");
+const submitbtn = document.querySelector(".submitbtn");
+// collect the password error message element
+const passworderror = document.querySelector(".passworderror");
+
+// disable button on window load
+window.addEventListener("load", () => {
+    submitbtn.disabled = true;
+    submitbtn.style.backgroundColor = "lightgray";
+})
+
+// check the length of the password
+passwordfield.addEventListener("input", () => {
+    let numbercharacters = passwordfield.value.length; 
+    if(numbercharacters < 8){
+        passworderror.textContent = "Invalid! Password must have 8+ characters";
+        passworderror.style.color = "red";
+        passwordfield.style.border = "solid 2px red";
+
+    }
+    else{
+        passworderror.innerHTML = "&#x2713; Valid Password";
+        passworderror.style.color = "green";
+        passwordfield.style.border = "solid 2px green";
+        validPassword = true;
+    }
+    validateForm()
+})
+
+
+// feedback and comments section
+const comments = document.querySelector("#comments");
+const commenterror = document.querySelector(".commenterror");
+const numchars = document.querySelector("#numchars");
+
+comments.addEventListener("input", () => {
+    let areaCharacters = comments.value.length;
+    numchars.textContent = areaCharacters;
+
+    if (areaCharacters < 50) {
+        commenterror.textContent = "Invalid! Comment Must be 50-2000 characters";
+        comments.style.border = "solid 2px red";
+        submitbtn.disabled = true;
+        submitbtn.style.backgroundColor = "lightgray";
+    } else {
+        comments.style.border = "solid 2px green";
+        validComment = true;
+    }
+    validateForm()
+});
+
+// validation checkpoints
+let validPassword = false;
+let validComment = false;
+
+function validateForm() {
+    if(validComment && validPassword){
+        submitbtn.disabled = false;
+        submitbtn.style.backgroundColor = "red";
+    }
+}
+
+
 
 
 

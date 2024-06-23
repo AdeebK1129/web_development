@@ -62,7 +62,7 @@ Event Object in Key Event
     margin: 30px auto;
 }
 .gallerycontainer{
-    position: absolute;
+    position: relative;
     z-index: 1;
     overflow-x: scroll;
     white-space: nowrap;
@@ -117,4 +117,41 @@ html{
 .gotop:hover{
     background-color: rgba(200, 200, 200, 0.8);
     box-shadow: 0px 0px 5px 2px;
+}
+
+/* Thursday, June 20 */
+/* Username and Password Validation */
+.greeting{
+    display: none;
+}
+#myform{
+    background-color: aliceblue;
+    box-shadow: 1px 1px 3px gray;
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+.controlblock{
+    margin-bottom: 20px;
+}
+.passwordmsg{
+    color: gray;
+    margin-top: -1px;
+}
+.passworderror{
+    color: red;
+}
+.submitbtn{
+    background-color: red;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    transition: ease-in-out 200ms;
+    color: aliceblue;
+}
+.submitbtn:hover{
+    transform: translateY(5px);
+    cursor: pointer;
+    background-color: black;
+    box-shadow: 0px -2px 3px gray;
 }

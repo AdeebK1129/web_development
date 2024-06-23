@@ -62,6 +62,46 @@
     </div>
 
 
+    <!-- Thursday, June 20 -->
+    <h2>Form Events</h2>
+    <form id="myform">
+        <!-- Username -->
+        <div class="controlblock">        
+            <label for="username">Enter a Username</label>
+            <input type="text" id="username" placeholder="Type Username" required>
+        </div>
+
+        <!-- Password -->
+        <div class="controlblock">        
+            <label for="passwordfield">Password</label>
+            <input type="password" id="passwordfield" placeholder="Enter a Password" required>
+            <p class="passwordmsg">Must be 8+ characters</p>
+            <div class="passworderror"></div>
+        </div>
+
+
+        <!-- Comments and Feedback -->
+        <div class="controlarea">
+            <p>
+                <label for="comments">Feedback and Comments: </label>
+            </p>
+            <textarea name="textcomment" id="comments" rows="20" cols="50" placeholder="50-2000 Characters" minlength="50" maxlength="2000"></textarea>
+            <p><span id="numchars">0</span></p>
+            <p class="commentsmsg">Must be 50-2000 characters</p>
+            <div class="commenterror"></div>
+        </div>
+
+        <button type="submit" class="submitbtn">Submit</button>
+
+    </form>
+    <!-- Display Message after Form is Submitted -->
+    <div class="greeting">
+        <p>Welcome to Form Events <span></span></p>
+    </div>
+
+
+
+
     <script src="script.js"></script>
 </body>
 </html> 
