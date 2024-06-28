@@ -1,0 +1,75 @@
+/* Keep the width of the window width to 100% */
+*{box-sizing: border-box;}
+
+.myform fieldset{
+    width: 60%;
+    margin: 20px auto;
+    background-color: aliceblue;
+}
+
+.controlblock{
+    margin-bottom: 20px;
+}
+
+img{width: 100%;}
+.item1{
+    width: 300px;
+    height: 820px;
+    box-shadow: 1px 1px 3px gray;
+    padding: 14px;
+    margin: 20px;
+}
+.item1 img{
+    height: 60%;
+    width: auto;
+    margin-left: 20%;
+    margin-top: 30%;
+}
+.itemname{
+    font-weight: bolder;
+    color: rgb(30, 30, 30);
+    font-size: 1.5em;
+}
+.itemdescription{
+    color: darkslategray;
+    margin-top: -20px;
+}
+.saleprice{
+    color: red;
+    font-size: 1.3em;
+}
+.item1btn{
+    display: block;
+    background-color: darkslategray;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+/* Shopping Cart */
+.bagcontainer{
+    width: 90%;
+    margin: auto;
+    border: solid 1px black;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+}
+.itemimg{
+    width: 30%;
+}
+.itemdesc{
+    width: 30%;
+}
+.itemprice{
+    width: 15%;
+}
+.itemquantity{
+    width: 10%;
+}
+.totalprice_item{
+    width: 15%;
+}
+
+

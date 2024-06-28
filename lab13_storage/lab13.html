@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporary Storage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Temporary Storage</h1>
+    <a href="cart.html">Cart</a>
+    <form class="myform" action="display.html">
+        <fieldset>
+            <legend>Survey</legend>
+            <div class="controlblock">            
+                <label for="firstname">First Name: </label>
+                <input type="text" name="username" id="firstname">
+            </div>
+
+            <div class="controlblock">
+                <p>Please select your favorite language</p>
+                <label for="html">HTML</label>
+                <input type="radio" name="fav_language" id="html" value="HTML">
+                <label for="css">CSS</label>
+                <input type="radio" name="fav_language" id="css" value="CSS">
+                <label for="js">Javascript</label>
+                <input type="radio" name="fav_language" id="js" value="Javascript">
+
+            </div>
+
+            <div class="controlblock">
+                <input type="submit" value="Submit Survey">
+            </div>
+
+        </fieldset>
+    </form>
+
+    <div class="displayresult" value="Submit Survey"></div>
+
+    <h1>Transfer Item to the Cart</h1>
+    <div class="container">
+        <section class="item1">
+            <img src="item1.webp" class="imgitem1">
+            <p class="itemname">Gingham Glow</p>
+            <p class="itemdescription">Conditioner</p>
+            <p> <s>$20</s> $<b class="saleprice">17</b></p>
+            <form class="formitem1" action="cart.html">
+                <label for="quantityitem1">Quantity</label>
+                <input type="number" name="item1quantity" id="quantityitem1" max="10" min="0">
+                <input type="submit" value="Add to Cart" class="item1btn">
+            </form>
+        </section>
+    </div>
+
+
+    <script src="storage.js"></script>
+</body>
+</html>
