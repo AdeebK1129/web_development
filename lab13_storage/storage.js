@@ -24,8 +24,8 @@ myform.addEventListener("submit", (event)=> {
 // collect the elements
 const formitem1 = document.querySelector(".formitem1");
 const itemname = document.querySelector(".itemname");
-const itemdescription = document.querySelector(".itemdescription");
-const imgitem = document.querySelector(".imgitem1");
+const itemdescription = document.querySelector(".itemdescription").textContent;
+const imgitem = document.querySelector(".imgitem1").getAttribute('src');
 const saleprice = document.querySelector(".saleprice").textContent;
 
 formitem1.addEventListener("submit", () => {
@@ -34,7 +34,7 @@ formitem1.addEventListener("submit", () => {
     // set data into sessionStorage
     sessionStorage.setItem('quantityitem1', quantityitem1);
     sessionStorage.setItem('itemname1', itemname.textContent);
-    sessionStorage.setItem('itemdescription', itemdescription.textContent);
-    sessionStorage.setItem('imgitem1', imgitem.src);
+    sessionStorage.setItem('itemdescription', itemdescription);
+    sessionStorage.setItem('imgitem1', imgitem);
     sessionStorage.setItem('saleprice1', saleprice);
 })
