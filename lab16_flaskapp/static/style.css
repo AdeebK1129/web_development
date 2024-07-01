@@ -1,0 +1,43 @@
+body{
+    background-color: aliceblue;
+}
+
+*{box-sizing: border-box}
+.quotesform{
+    background-color: whitesmoke;
+    width: 500px;
+    margin: 50px auto;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 12px;
+    padding: 20px;
+}
+.controlform{
+    margin-top: 50px;
+}
+.controlform label{
+    display: block;
+    font-weight: bolder;
+}
+.controlform input, .controlform textarea{
+    padding: 5px;
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+}
+.submitbtn{
+    background-color: red;
+    font-size: 1.1em;
+    color: aliceblue;
+    border: none;
+}
+.submitbtn:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 1px black;
+}
+/* ------- index.html ------- */
+.addquotebtn a{
+    background-color: red;
+    color: whitesmoke;
+    padding: 5px 15px;
+    text-decoration: none;
+}
