@@ -2,13 +2,11 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 import os
-from datetime import datetime  
+from datetime import datetime
+import json
 
 # Load environment variables from .env file
 load_dotenv()
-
-# Print the DATABASE_URL to ensure it's being loaded correctly
-print("DATABASE_URL:", os.getenv('DATABASE_URL'))
 
 # Create an instance of the Flask class
 app = Flask(__name__)
@@ -51,19 +49,40 @@ class Order(db.Model):
     email = db.Column(db.String(100), nullable=False)
     total_price = db.Column(db.Float, nullable=False)
     items = db.Column(db.JSON, nullable=False)
-    date = db.Column(db.DateTime, default=datetime.utcnow)  # Use datetime.utcnow correctly
+    date = db.Column(db.DateTime, default=datetime.utcnow)  
 
     def __repr__(self):
         return f'<Order {self.id}>'
+    
+#Brand Images
+class Brand(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    hero_image = db.Column(db.String(200), nullable=True)
 
 ############ ROUTES ############
 @app.route('/')
 def index():
     return render_template('index.html')
 
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
 @app.route('/checkout')
 def checkout():
     return render_template('checkout.html')
+
+@app.route('/process', methods=['POST'])
+def process():
+    buyer_name = request.form['first_name'] + " " + request.form['last_name']
+    email = request.form['email']
+    total_price = request.form['total_price']
+    items = request.form['items']
+    order_data = Order(buyer_name=buyer_name, email=email, total_price=total_price, items=items)
+    db.session.add(order_data)
+    db.session.commit()
+    return redirect(url_for('past_orders'))
 
 @app.route('/shop')
 def shop():
@@ -72,8 +91,9 @@ def shop():
 
 @app.route('/brand/<brand_name>')
 def brand(brand_name):
+    brand = Brand.query.filter_by(name=brand_name).first_or_404()
     products = Product.query.filter_by(brand=brand_name).all()
-    return render_template('brand.html', products=products, brand=brand_name)
+    return render_template('brand.html', brand=brand, products=products)
 
 @app.route('/product/<int:product_id>')
 def product_detail(product_id):
@@ -81,13 +101,14 @@ def product_detail(product_id):
     images = Image.query.filter_by(product_id=product_id).all()
     return render_template('product_detail.html', product=product, images=images)
 
-@app.route('/favorites')
-def favorites():
-    return render_template('favorites.html')
-
 @app.route('/past_orders')
 def past_orders():
-    return render_template('past_orders.html')
+    orders = Order.query.all()
+    for order in orders:
+        order.items = json.loads(order.items)
+        for item in order.items:
+            item['price'] = float(item['price'])  
+    return render_template('past_orders.html', orders=orders)
 
 if __name__ == '__main__':
     print("Creating tables...")
